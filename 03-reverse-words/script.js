@@ -10,17 +10,31 @@
 
 function reverseWords(str) {
     const array = str.split(' '); //разбиаем строку на массив
+    const result = [];
+for (i = 0; i < array.length; i++){
+let c =array.length;
+  result[i] = array[c = c - 1 ];
+  console.log(result);
+debugger
 
-    array.forEach(element => {
-
-        array.push(element);
-        
-        return array
-    });
-
+}
+// array.map(function (item) {
+// const result = result + item;
+// console.log(result);
+// debugger;
 
 
-    console.log(array);
+
+//     array.forEach(function (element) {
+// Array = [];
+//         array.push(element);
+//         console.log(array);
+//         return array
+//     });
+
+
+
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
