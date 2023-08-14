@@ -9,7 +9,18 @@
 */
 
 function reverseWords(str) {
-    // Напишите код здесь
+    const array = str.split(' '); //разбиаем строку на массив
+
+    array.forEach(element => {
+
+        array.push(element);
+        
+        return array
+    });
+
+
+
+    console.log(array);
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
