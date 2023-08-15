@@ -15,36 +15,42 @@
 
 function palindrome(str) {
 
-  let newElm = str.toLowerCase().split('');
+  const mainArray = str.toLowerCase().split(''); //разбиваем на массив 
+  const reversArray = mainArray.slice(0).reverse(); //создаем новый массив и присваиваем туда старый
+                                                    //предварительно перевернув его 
 
-for (let i = 0; i < newElm.length; i++) {
+  let checkVariable = 0;  //контрольная переменная отвечающая за совпадения
 
-let startArray = 0;
-let endArray = newElm.length;
+  if (mainArray.length === 0) return false  // условие для пустой строки 
+                                            //у пустой строки длинна 0, тестер не пропускает хз почему
 
+  for (let i = 0; i < mainArray.length; i++) { //перебираем массив по его длинне 
 
-  if (newElm[i].includes(newElm[newElm.length])) {
+    if (mainArray[i] === reversArray[i]) {  //сравниваем значения двух массивов
 
+      checkVariable = checkVariable + 1; //значения совпали, присваиваем + 1
 
-    console.log('1');
-    // console.log(newElm[startArray]);
-    // console.log(startArray);
-    // console.log(newElm[endArray]);
-    // console.log(endArray);
-  } else {
-    console.log('2');
+      if (checkVariable === mainArray.length) { return true } //как только занчение достигнет длинны 
+                                                              //массива, проверка всех значений
+                                                              //окончена аргумент палиндром 
+
+    } else {
+
+      return false;  // иначе аргумент не полиндром 
+
+    }
 
   }
 
 }
 
-}
-
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
+//console.log(palindrome('')); // false моя пустая тестовая строка 
+
 console.log(palindrome('топот')); // должно быть true
-//console.log(palindrome('Saippuakivikauppias')); // true
-//console.log(palindrome('привет')); // false
+console.log(palindrome('Saippuakivikauppias')); // true
+console.log(palindrome('привет')); // false
 
 /*
  * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,

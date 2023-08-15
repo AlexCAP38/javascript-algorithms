@@ -9,35 +9,18 @@
 */
 
 function reverseWords(str) {
-    const array = str.split(' '); //разбиаем строку на массив
-    const result = [];
-for (i = 0; i < array.length; i++){
-let c =array.length;
-  result[i] = array[c = c - 1 ];
-  console.log(result);
-debugger
+  //Доделать посик
+  //поиск в строке основных знаков припинания основных
+  //const symbolArray = ['.', ',', ';', ':', '!', '?', '-'];
 
-}
-// array.map(function (item) {
-// const result = result + item;
-// console.log(result);
-// debugger;
+  const array = str.split(' ').reverse().join(' ');
+  //разбиаем строку на массив, переворачиваем, собираем обратно в строку
 
-
-
-//     array.forEach(function (element) {
-// Array = [];
-//         array.push(element);
-//         console.log(array);
-//         return array
-//     });
-
-
-
-
+  return array
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
+console.log(reverseWords('всегда, много, путей достичь цель есть')); // "есть цель достичь путей много всегда"
 console.log(reverseWords('всегда много путей достичь цель есть')); // "есть цель достичь путей много всегда"
 console.log(reverseWords('испробовать их все должны вы')); // "вы должны все их испробовать"
