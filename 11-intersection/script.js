@@ -9,18 +9,30 @@
 
 function intersection(arr1, arr2) {
 
-  const array = arr1.map((item) => {
+  //элементы массива arr1 будут значениями для поиска в массиве arr2
+  let array = arr1.filter((item) => {
 
+    //проверяем элементы массива arr1 на целое число
     if (Number.isInteger(item)) {
 
+      //количество проходов для поиска = длинне массива arr2
       for (let i = 0; i < arr2.length; i++) {
 
-        arr2.index !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! тут остановился
+        //если находим в массиве arr2 элемент item добавлем его в новый массив
+        if (item === arr2[i]) {
 
-        if (item === arr2[i]) return item
+          //вернем истину чтоб эдемент добавился в массив
+          return true
+
+        }
 
       }
     } else console.log('массив должен содержать целые числа')
+  });
+  
+  //удаляем будли из массива 
+  array = array.filter((item, index) => {
+    return array.indexOf(item) === index
   });
 
   return array
@@ -30,4 +42,6 @@ function intersection(arr1, arr2) {
 
 console.log(intersection([1, 5, 4, 2], [8, 91, 4, 1, 3])); // [4, 1]
 console.log(intersection([1, 5, 4, 2], [7, 12])); // []
-console.log(intersection([1, 1, 5, 4, 2], [8, 91, 4, 1, 1, 3])); // []
+console.log(intersection([2, 2, 5, 4, 2], [8, 91, 4, 2, 2, 3])); // [2,4]
+
+//2.2.4.2

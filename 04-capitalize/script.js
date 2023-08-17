@@ -13,22 +13,23 @@ function capitalize(str) {
 
     array = array.map(function (item, index, allArray) {
 
-        //Разабьем строку на массив
+        //Разабьем строку (слово) на массив (по буквам)
         const upperSymbol = item.split('');
         
         //Ищем пустые элементы в массиве
         if (item === '') {
-            delete allArray.splice[index];
-            return
+            
+            //return allArray.splice[index, 1];
+            return false;
         }
 
-        //Берем первый элемент в массиве и преобразовываем ее в верхний регистр
+        //Берем первый элемент(первую букву) в массиве и преобразовываем ее в верхний регистр
         const Symbol = upperSymbol.shift().toUpperCase();
 
-        //Добавляем элемент в начало массива 
+        //Добавляем элемент в начало массива (возвращаем на место)
         upperSymbol.unshift(Symbol);
 
-        //бреобразуем в строку возвращаем в массив
+        //бреобразуем масси в строку и возвращаем колбэк 
         return item = upperSymbol.join('')
 
     });
