@@ -9,25 +9,31 @@
 
 function uniq(arr) {
 
-  //создаем новый массив, функция мар будет возвращать элементы
-  const array = arr.map(function (elem, indexElem, arrayElem) {
+  //функция filter cоздаеn новый массив, будет возвращать элементы
+
+  const newArray = [];
+  let i = 0;
+  let c = 0;
+  arr.forEach(function (elem, indexElem, arrayElem) {
+
+    if (indexElem === 0) {
+
+    } else {
+
+      if (arrayElem[i] !== elem) {
 
 
-    let i = 0;
-      let a = 1;
-    //функция для поиска дублей
-    arr.forEach((elemFind, indexFind, arrayFind) => {
+      c++;
 
-      // наичнаем сравнение с соседнего элемента. этот элемент есть в массиве ???
-      if (arrayElem[indexElem] === arrayFind[indexFind + 1]) {
+      if (c = (arrayElem.length-1)) {
+        newArray.push(arrayElem[i]);
+
         i++;
-      } else {
-        a++
-        //return delete arrayElem[indexFind]
-      }
-    });
 
-    return elem
+      }
+    }
+  }
+
   });
 
 
@@ -35,7 +41,7 @@ function uniq(arr) {
 
 
   //вернем изменный массив
-  return array
+  return newArray
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

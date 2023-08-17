@@ -15,38 +15,42 @@
 
 function palindrome(str) {
 
-  const mainArray = str.toLowerCase().split(''); //разбиваем на массив 
-  const reversArray = mainArray.slice(0).reverse(); //создаем новый массив и присваиваем туда старый
-                                                    //предварительно перевернув его 
+  //разбиваем на массив
+  const mainArray = str.toLowerCase().split('');
 
-  let checkVariable = 0;  //контрольная переменная отвечающая за совпадения
+  //создаем новый массив и присваиваем туда старый, предварительно перевернув его
+  const reversArray = mainArray.slice(0).reverse();
 
-  if (mainArray.length === 0) return false  // условие для пустой строки 
-                                            //у пустой строки длинна 0, тестер не пропускает хз почему
+  //контрольная переменная отвечающая за совпадения
+  let checkVariable = 0;
 
-  for (let i = 0; i < mainArray.length; i++) { //перебираем массив по его длинне 
+  // условие для пустой строки, у пустой строки длинна 0, тестер не пропускает хз почему
+  if (mainArray.length === 0) return false
 
-    if (mainArray[i] === reversArray[i]) {  //сравниваем значения двух массивов
+  //перебираем массив по его длинне
+  for (let i = 0; i < mainArray.length; i++) {
 
-      checkVariable = checkVariable + 1; //значения совпали, присваиваем + 1
+    //сравниваем значения двух массивов
+    if (mainArray[i] === reversArray[i]) {
 
-      if (checkVariable === mainArray.length) { return true } //как только занчение достигнет длинны 
-                                                              //массива, проверка всех значений
-                                                              //окончена аргумент палиндром 
+      //значения совпали, присваиваем + 1
+      checkVariable = checkVariable + 1;
+
+      //как только занчение достигнет длинны массива, проверка всех значений окончена аргумент палиндром
+      if (checkVariable === mainArray.length) { return true }
 
     } else {
 
-      return false;  // иначе аргумент не полиндром 
+      // иначе аргумент не полиндром
+      return false;
 
     }
-
   }
-
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-//console.log(palindrome('')); // false моя пустая тестовая строка 
+//console.log(palindrome('')); // false моя пустая тестовая строка
 
 console.log(palindrome('топот')); // должно быть true
 console.log(palindrome('Saippuakivikauppias')); // true
