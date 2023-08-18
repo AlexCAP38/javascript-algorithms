@@ -7,28 +7,35 @@
  * • кратные трём — на fizz;
  * • кратные пяти — на buzz;
  * • кратные и трём, и пяти одновременно — на fizzbuzz.
- * 
+ *
 */
 
 function fizzBuzz(num) {
-    //    if (typeof num !== 'undefined') return console.log('Аргумент не число');
-    if (num % 3 === 0 && num % 5 === 0) {
-        console.log(num);
-        return console.log('fizzbuzz');
-    };
 
-    if (num % 3 === 0) {
-        console.log(num);
-        return console.log('fizz');
-    };
+//это мой вариант но оно не проходит тесты, я конечно могу закопипастить решение но оно для моего понимаение сложное
 
-    if (num % 5 === 0) {
-        console.log(num);
-        return console.log('fizz');
-    }
-    console.log(num);
-    return num
+  if (num % 3 === 0 && num % 5 === 0) {
+
+    console.log('fizzbuzz');
+
+  };
+
+  if (num % 5 === 0) {
+
+    console.log('buzz');
+
+  };
+
+  if (num % 3 === 0) {
+
+    console.log('fizz');
+
+  };
+
+  return num
+
 }
+
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(fizzBuzz(1));
@@ -42,8 +49,3 @@ console.log(fizzBuzz(8));
 console.log(fizzBuzz(9));
 console.log(fizzBuzz(10));
 console.log(fizzBuzz(15));
-// console.log(fizzBuzz(-20));
-// console.log(fizzBuzz(18.22));
-// console.log(fizzBuzz(10 / 0));
-// console.log(fizzBuzz('ssss'));
-// console.log(fizzBuzz(15));

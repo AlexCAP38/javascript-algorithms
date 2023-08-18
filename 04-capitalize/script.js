@@ -8,17 +8,17 @@
 
 function capitalize(str) {
 
-    //разбиваем строку на массив c крупными словами 
+    //разбиваем строку на массив c крупными словами
     let array = str.split(' ');
 
     array = array.map(function (item, index, allArray) {
 
         //Разабьем строку (слово) на массив (по буквам)
         const upperSymbol = item.split('');
-        
+
         //Ищем пустые элементы в массиве
         if (item === '') {
-            
+
             //return allArray.splice[index, 1];
             return false;
         }
@@ -29,7 +29,7 @@ function capitalize(str) {
         //Добавляем элемент в начало массива (возвращаем на место)
         upperSymbol.unshift(Symbol);
 
-        //бреобразуем масси в строку и возвращаем колбэк 
+        //бреобразуем масси в строку и возвращаем колбэк
         return item = upperSymbol.join('')
 
     });
@@ -40,5 +40,5 @@ function capitalize(str) {
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-//console.log(capitalize('молодость всё простит')); // "Молодость Всё Простит"
+console.log(capitalize('молодость всё простит')); // "Молодость Всё Простит"
 console.log(capitalize('нужно  правильно решить как минимум')); // "Молодость Всё Простит"

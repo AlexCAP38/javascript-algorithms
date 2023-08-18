@@ -18,6 +18,10 @@ function palindrome(str) {
   //разбиваем на массив
   const mainArray = str.toLowerCase().split('');
 
+  //почему пустая строка должна бять палиндромом ?
+  //википедия говорит "Палиндро́м  — число, буквосочетание, слово или текст, одинаково читающееся в обоих направлениях"
+  if (mainArray.length === 0) return true
+
   //создаем новый массив и присваиваем туда старый, предварительно перевернув его
   const reversArray = mainArray.slice(0).reverse();
 
@@ -50,7 +54,7 @@ function palindrome(str) {
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-//console.log(palindrome('')); // false моя пустая тестовая строка
+console.log(palindrome('')); // false моя пустая тестовая строка
 
 console.log(palindrome('топот')); // должно быть true
 console.log(palindrome('Saippuakivikauppias')); // true

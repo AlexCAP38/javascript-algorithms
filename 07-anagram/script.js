@@ -10,11 +10,19 @@
 
 function anagram(str1, str2) {
 
-  //преобразовали в нижний регистр и разбиваем на массив
-  str1 = str1.toLowerCase().split('');
+  //строку преобразовали в нижний регистр
+  str1 = str1.toLowerCase();
 
-  //преобразовали в нижний регистр
+  //строку преобразовали в нижний регистр
   str2 = str2.toLowerCase();
+
+  //условие для проверки анаграммы
+  //это слово или фраза, образованные путем перестановки букв другого слова или фразы, обычно используя все исходные буквы ровно один раз
+  if (str1 === str2 || str1.length !== str2.length) return false
+
+  //разбираем на массив
+  str1 = str1.split('');
+
 
   //переменная для подсчета проходов поиска
   let sum = 0;
@@ -38,8 +46,5 @@ function anagram(str1, str2) {
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
-console.log(anagram('aba', 'ba')); // true    я не понимаю почему тут должно вернуться false
-console.log(anagram('up', 'UP')); //true      я не понимаю почему тут должно вернуться false
-
 console.log(anagram('finder', 'Friend')); // true
 console.log(anagram('hello', 'bye')); // false
